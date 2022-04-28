@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SQL COMMANDS</title>
+    <link rel="stylesheet" href="bootstrap.css" />
+  </head>
+
+  <!-- Style -->
+  <style>
+      h1{
+          color: white;
+      }
+
+      /* width */
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+body::-webkit-scrollbar-track {
+  background: #585858;
+}
+
+/* Handle */
+body::-webkit-scrollbar-thumb {
+  background: rgb(36, 38, 44);
+}
+
+/* Handle on hover */
+body::-webkit-scrollbar-thumb:hover {
+  background: rgb(50, 114, 252);
+}
+  </style>
+  <!-- /Style -->
+
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a href="#" class="navbar-brand">My SQL</a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a href="#" class="navbar-nav nav-link">SQL Command</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- /Navbar -->
+
+    <!-- Main -->
+
+    <div class="container-fluid overflow-scroll bg-dark">
+        <h1 class="py-4" >MySQL Commands</h1>
+        <table class="table table-dark table-hover ">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Descreption</th>
+                <th scope="col">Command</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>To login (from unix shell) use -h only if needed.</td>
+                <td>[mysql dir]/bin/mysql -h hostname -u root -p</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Create a database on the sql server.</td>
+                <td>create database [databasename];</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <!-- <td colspan="2">Larry the Bird</td> -->
+                <td>List all databases on the sql server.</td>
+                <td>show databases;</td>
+              </tr>
+              <tr>
+                <th scope="row">4</th>
+                <td>Switch to a database.</td>
+                <td>use [db name];</td>
+              </tr>
+
+              <tr>
+                <th scope="row">5</th>
+                <td>To see all the tables in the db.</td>
+                <td>show tables;</td>
+              </tr>
+
+              <tr>
+                <th scope="row">6</th>
+                <td>To see database's field formats.</td>
+                <td>describe [table name];</td>
+              </tr>
+
+              <tr>
+                <th scope="row">7</th>
+                <td>To delete a db.</td>
+                <td>drop database [database name];</td>
+              </tr>
+
+              <tr>
+                <th scope="row">8</th>
+                <td>To delete a table.</td>
+                <td>drop table [table name];</td>
+              </tr>
+
+              <tr>
+                <th scope="row">9</th>
+                <td>Show all data in a table.</td>
+                <td>SELECT * FROM [table name];</td>
+              </tr>
+
+              <tr>
+                <th scope="row">10</th>
+                <td>Returns the columns and column information pertaining to the designated table.</td>
+                <td>show columns from [table name];</td>
+              </tr>
+
+              <tr>
+                <th scope="row">11</th>
+                <td>Show certain selected rows with the value "whatever".</td>
+                <td>SELECT * FROM [table name] WHERE [field name] = "whatever";</td>
+              </tr>
+
+              <tr>
+                <th scope="row">12</th>
+                <td>Show all records containing the name "Bob" AND the phone number '3444444'</td>
+                <td>SELECT * FROM [table name] WHERE name = "Bob" AND phone_number = '3444444';</td>
+              </tr>
+
+              <tr>
+                <th scope="row">13</th>
+                <td>Show all records not containing the name "Bob" AND the phone number '3444444' order by the phone_number field.</td>
+                <td>SELECT * FROM [table name] WHERE name != "Bob" AND phone_number = '3444444' order by phone_number;</td>
+              </tr>
+
+              <tr>
+                <th scope="row">14</th>
+                <td>Show all records starting with the letters 'bob' AND the phone number '3444444'.</td>
+                <td>SELECT * FROM [table name] WHERE name like "Bob%" AND phone_number = '3444444';</td>
+              </tr>
+
+              <tr>
+                <th scope="row">15</th>
+                <td>Use a regular expression to find records. Use "REGEXP BINARY" to force case-sensitivity. This finds any record beginning with a.</td>
+                <td>SELECT * FROM [table name] WHERE rec RLIKE "^a$";</td>
+              </tr>
+
+              <tr>
+                <th scope="row">16</th>
+                <td>Show unique records.</td>
+                <td>	SELECT DISTINCT [column name] FROM [table name];</td>
+              </tr>
+
+              <tr>
+                <th scope="row">17</th>
+                <td>Show selected records sorted in an ascending (asc) or descending (desc).</td>
+                <td>SELECT [col1],[col2] FROM [table name] ORDER BY [col2] DESC;</td>
+              </tr>
+
+              <tr>
+                <th scope="row">18</th>
+                <td>Count rows.</td>
+                <td>SELECT COUNT(*) FROM [table name];</td>
+              </tr>
+
+              <tr>
+                <th scope="row">19</th>
+                <td>Join tables on common columns.</td>
+                <td>select lookup.illustrationid, lookup.personid,person.birthday from lookup
+                    left join person on lookup.personid=person.personid=statement to join birthday in person table with primary illustration id;</td>
+              </tr>
+
+              <tr>
+                <th scope="row">20</th>
+                <td>Switch to the mysql db. Create a new user.</td>
+                <td>INSERT INTO [table name] (Host,User,Password) VALUES('%','user',PASSWORD('password'));</td>
+              </tr>
+
+              <tr>
+                <th scope="row">21</th>
+                <td>Change a users password.(from unix shell).</td>
+                <td>[mysql dir]/bin/mysqladmin -u root -h hostname.blah.org -p password 'new-password'</td>
+              </tr>
+
+              <tr>
+                <th scope="row">22</th>
+                <td>Change a users password.(from MySQL prompt).</td>
+                <td>SET PASSWORD FOR 'user'@'hostname' = PASSWORD('passwordhere');</td>
+              </tr>
+
+              <tr>
+                <th scope="row">23</th>
+                <td>Switch to mysql db.Give user privilages for a db.</td>
+                <td>INSERT INTO [table name] (Host,Db,User,Select_priv,Insert_priv,Update_priv,Delete_priv,Create_priv,Drop_priv) VALUES ('%','db','user','Y','Y','Y','Y','Y','N');</td>
+              </tr>
+
+              <tr>
+                <th scope="row">24</th>
+                <td>To update info already in a table.</td>
+                <td>UPDATE [table name] SET Select_priv = 'Y',Insert_priv = 'Y',Update_priv = 'Y' where [field name] = 'user';</td>
+              </tr>
+
+              <tr>
+                <th scope="row">25</th>
+                <td>Delete a row(s) from a table.</td>
+                <td>DELETE from [table name] where [field name] = 'whatever';</td>
+              </tr>
+
+              <tr>
+                <th scope="row">26</th>
+                <td>Update database permissions/privilages.</td>
+                <td>FLUSH PRIVILEGES;</td>
+              </tr>
+
+              <tr>
+                <th scope="row">27</th>
+                <td>Delete a column.</td>
+                <td>alter table [table name] drop column [column name];</td>
+              </tr>
+
+              <tr>
+                <th scope="row">28</th>
+                <td>Add a new column to db.</td>
+                <td>alter table [table name] add column [new column name] varchar (20);</td>
+              </tr>
+
+              <tr>
+                <th scope="row">29</th>
+                <td>Change column name.</td>
+                <td>alter table [table name] change [old column name] [new column name] varchar (50);</td>
+              </tr>
+
+              <tr>
+                <th scope="row">30</th>
+                <td>Make a unique column so you get no dupes.</td>
+                <td>alter table [table name] add unique ([column name]);</td>
+              </tr>
+
+              <tr>
+                <th scope="row">31</th>
+                <td>Make a column bigger.</td>
+                <td>alter table [table name] modify [column name] VARCHAR(3);</td>
+              </tr>
+
+              <tr>
+                <th scope="row">32</th>
+                <td>Delete unique from table.</td>
+                <td>	alter table [table name] drop index [colmn name];</td>
+              </tr>
+
+              <tr>
+                <th scope="row">33</th>
+                <td>Load a CSV file into a table.</td>
+                <td>LOAD DATA INFILE '/tmp/filename.csv' replace INTO TABLE [table name] FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n' (field1,field2,field3);</td>
+              </tr>
+
+              <tr>
+                <th scope="row">34</th>
+                <td>Dump all databases for backup. Backup file is sql commands to recreate all db's.</td>
+                <td>[mysql dir]/bin/mysqldump -u root -ppassword --opt >/tmp/alldatabases.sql</td>
+              </tr>
+
+              <tr>
+                <th scope="row">35</th>
+                <td>Dump one database for backup.</td>
+                <td>[mysql dir]/bin/mysqldump -u username -ppassword --databases databasename >/tmp/databasename.sql</td>
+              </tr>
+
+              <tr>
+                <th scope="row">36</th>
+                <td>Dump a table from a database.</td>
+                <td>[mysql dir]/bin/mysqldump -c -u username -ppassword databasename tablename > /tmp/databasename.tablename.sql</td>
+              </tr>
+
+              <tr>
+                <th scope="row">37</th>
+                <td>Restore database (or database table) from backup.</td>
+                <td>[mysql dir]/bin/mysql -u username -ppassword databasename < /tmp/databasename.sql</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
+    <!-- /Main -->
+
+    <!-- Footer -->
+    <!-- /Footer -->
+
+    <!-- JavaScript -->
+    <script src="bootstrap.js"></script>
+    <!-- /JavaScript -->
+  </body>
+</html>
